@@ -1,73 +1,85 @@
-    <!-- ======= Header ======= -->
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div
-          class="container-fluid container-xl d-flex align-items-center justify-content-between"
-        >
-          <a href={{ url('/')  }} class="logo d-flex align-items-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            {{-- <img src={{ asset("front/assets/img/logo.png') }} alt=""> --}}
-            <h1>BligoSoft</h1>
-          </a>
-  
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a href={{ url('/')  }}>Blog</a></li>
-              <li><a href={{ url('/portfolio') }}>Portfolio</a></li>
-              {{-- <li class="dropdown">
-                <a href="category.html"
-                  ><span>Categories</span>
-                  <i class="bi bi-chevron-down dropdown-indicator"></i
-                ></a>
-                <ul>
-                  <li><a href="search-result.html">Search Result</a></li>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li class="dropdown">
-                    <a href="#"
-                      ><span>Deep Drop Down</span>
-                      <i class="bi bi-chevron-down dropdown-indicator"></i
-                    ></a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Drop Down 2</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
-                </ul>
-              </li> --}}
-  
-              <li><a href={{ url('/tentang-kami') }}>Tentang Kami</a></li>
-              <li><a href={{ url('/kontak') }}>Kontak</a></li>
-            </ul>
-          </nav>
-          <!-- .navbar -->
-  
-          <div class="position-relative">
-            <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
-            <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
-            <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
-  
-            <a href="#" class="mx-2 js-search-open"
-              ><span class="bi-search"></span
-            ></a>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-  
-            <!-- ======= Search Form ======= -->
-            <div class="search-form-wrap js-search-form-wrap">
-              <form action="search-result.html" class="search-form">
-                <span class="icon bi-search"></span>
-                <input type="text" placeholder="Search" class="form-control" />
-                <button class="btn js-search-close">
-                  <span class="bi-x"></span>
-                </button>
+<div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <nav id="navbar" class="site-nav">
+    <div class="container">
+      <div class="menu-bg-wrap">
+        <div class="site-navigation">
+          <div class="row g-0 align-items-center">
+            <div class="col-2">
+              {{-- <a href="index.html" class="logo m-0 float-start">Ponpes Anharul ulum ICBB<span class="text-primary">.</span></a> --}}
+              <a class="navbar-brand" href="#">
+                <img src="https://placeholder.pics/svg/150x50/888888/EEE/Logo" alt="..." height="36">
+              </a>
+            </div>
+            <div class="col-8 text-center">
+              <form action="#" class="search-form d-inline-block d-lg-none">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search..."
+                />
+                <span class="bi-search"></span>
+              </form>
+
+              <ul
+                class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto"
+              >
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#">Berita</a></li>
+                <li><a href="#">Artikel</a></li>
+                <li><a href="#">Tentang</a></li>
+                <li><a href="#">Kontak</a></li>
+                {{-- <li class="has-children">
+                  <a href="category.html">Pages</a>
+                  <ul class="dropdown">
+                    <li><a href="search-result.html">Search Result</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="single.html">Blog Single</a></li>
+                    <li><a href="category.html">Category</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li class="has-children">
+                      <a href="#">Dropdown</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Sub Menu One</a></li>
+                        <li><a href="#">Sub Menu Two</a></li>
+                        <li><a href="#">Sub Menu Three</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="category.html">Culture</a></li>
+                <li><a href="category.html">Business</a></li>
+                <li><a href="category.html">Politics</a></li> --}}
+              </ul>
+            </div>
+            <div class="col-2 text-end">
+              <a
+                href="#"
+                class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
+              >
+                <span></span>
+              </a>
+              <form action="#" class="search-form d-none d-lg-inline-block">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search..."
+                />
+                <span class="bi-search"></span>
               </form>
             </div>
-            <!-- End Search Form -->
           </div>
         </div>
-      </header>
-      <!-- End Header -->
+      </div>
+    </div>
+  </nav>

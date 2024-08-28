@@ -4,109 +4,549 @@
 
 @section('main')
     <main id="main">
-      <!-- ======= Hero Slider Section ======= -->
-      <section id="hero-slider" class="hero-slider">
-        <div class="container-md" data-aos="fade-in">
-          <div class="row">
-            <div class="col-12">
-              <div class="swiper sliderFeaturedPosts">
-                <div class="swiper-wrapper">
-
-                  @foreach($latest_posts as $latest)  
-                    <div class="swiper-slide">
-                      <a href="{{ url('p/'.$latest->slug) }}" class="img-bg d-flex align-items-end" style="background-image: url('{{ asset('storage/back/' . $latest->img) }}')">
-                        <div class="img-bg-inner">
-                          <h2>
-                            {{ $latest->title }}
-                          </h2>
-                          <p>
-                            {!! Str::limit($latest->desc, 230, '...') !!}
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  @endforeach
-
-                  
+      <!-- Start retroy layout blog posts -->
+      <section class="section bg-light">
+        <div class="container">
+          <div class="row align-items-stretch retro-layout">
+            <div class="col-md-4">
+              <a href="single.html" class="h-entry mb-30 v-height gradient">
+                <div
+                  class="featured-img"
+                  style="background-image: url({{ asset('assets/images/img_2_horizontal.jpg') }})"
+                ></div>
+  
+                <div class="text">
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h2>AI can now kill those annoying cookie pop-ups</h2>
                 </div>
-                <div class="custom-swiper-button-next">
-                  <span class="bi-chevron-right"></span>
+              </a>
+              <a href="single.html" class="h-entry v-height gradient">
+                <div
+                  class="featured-img"
+                  style="background-image: url({{ asset('assets/images/img_5_horizontal.jpg') }})"
+                ></div>
+  
+                <div class="text">
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h2>Don’t assume your user data in the cloud is safe</h2>
                 </div>
-                <div class="custom-swiper-button-prev">
-                  <span class="bi-chevron-left"></span>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="single.html" class="h-entry img-5 h-100 gradient">
+                <div
+                  class="featured-img"
+                  style="background-image: url({{ asset('assets/images/img_1_vertical.jpg') }})"
+                ></div>
+  
+                <div class="text">
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h2>Why is my internet so slow?</h2>
                 </div>
-
-                <div class="swiper-pagination"></div>
-              </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="single.html" class="h-entry mb-30 v-height gradient">
+                <div
+                  class="featured-img"
+                  style="background-image: url({{ asset('assets/images/img_3_horizontal.jpg') }})"
+                ></div>
+  
+                <div class="text">
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h2>Startup vs corporate: What job suits you best?</h2>
+                </div>
+              </a>
+              <a href="single.html" class="h-entry v-height gradient">
+                <div
+                  class="featured-img"
+                  style="background-image: url({{ asset('assets/images/img_4_horizontal.jpg') }})"
+                ></div>
+  
+                <div class="text">
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h2>Thought you loved Python? Wait until you meet Rust</h2>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </section>
-      <!-- End Hero Slider Section -->
-
-      <!-- ======= Culture Category Section ======= -->
-      <section class="category-section">
-        <div class="container" data-aos="fade-up">
-          <div
-            class="section-header d-flex justify-content-between align-items-center mb-5">
-            <h2>Blog</h2>
+      <!-- End retroy layout blog posts -->
+  
+      <!-- Start posts-entry -->
+      <section class="section posts-entry">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-sm-6">
+              <h2 class="posts-entry-title">Berita & Kegiatan</h2>
+            </div>
+            <div class="col-sm-6 text-sm-end">
+              <a href="category.html" class="read-more">View All</a>
+            </div>
           </div>
-
-          <div class="row">
-            <div class="col-md-9">        
-
-              <div class="row">
-                <div class="col-lg-4">
-                  @foreach ($side_list_posts as $list_post)  
-                  <div class="post-entry-1">
-                    <div class="post-meta">
-                      <span class="date">{{ $list_post->category->name }}</span>
-                      <span class="mx-1">&bullet;</span>
-                      <span>{{ $list_post->created_at->format('Y F d') }}</span>
-                    </div>
-                    <h2 class="mb-2">
-                      <a href="{{ url('p/'.$list_post->slug) }}">{{ $list_post->title }}</a>
+          <div class="row g-3">
+            <div class="col-md-9">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="blog-entry">
+                    <a href="single.html" class="img-link">
+                      <img
+                        src={{ asset("front/assets/images/img_1_sq.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </a>
+                    <span class="date">Apr. 14th, 2022</span>
+                    <h2>
+                      <a href="single.html"
+                        >Thought you loved Python? Wait until you meet Rust</a
+                      >
                     </h2>
-                    {{-- <span class="author mb-3 d-block">Jenny Wilson</span> --}}
-                    <p class="mb-4 d-block">{!! Str::limit($latest->desc, 150, '...') !!}</p>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Unde, nobis ea quis inventore vel voluptas.
+                    </p>
+                    <p>
+                      <a href="single.html" class="btn btn-sm btn-outline-primary"
+                        >Read More</a
+                      >
+                    </p>
                   </div>
-                  @endforeach
-
                 </div>
-
-                <div class="col-lg-8">
-
-                
-                  @foreach ($next_posts as $next_post)  
-                    <div class="post-entry-1">
-                      <a href="{{ url('p/'.$next_post->slug) }}"><img src="{{ asset('storage/back/' . $next_post->img) }}" alt="" class="img-fluid"/></a>
-                      <div class="post-meta">
-                        <span class="date">{{ $next_post->category->name }}</span>
-                        <span class="mx-1">&bullet;</span>
-                        <span>{{ $next_post->created_at->format('Y F d') }}</span>
-                      </div>
-                      <h2 class="mb-2">
-                        <a href="{{ url('p/'.$next_post->slug) }}">{{ $next_post->title }}</a>
-                      </h2>
-                      {{-- <span class="author mb-3 d-block">Jenny Wilson</span> --}}
-                      <p class="mb-4 d-block">
-                        {!! Str::limit($next_post->desc, 230, '...') !!}
-                      </p>
-                    </div>
-                  @endforeach
-
+                <div class="col-md-6">
+                  <div class="blog-entry">
+                    <a href="single.html" class="img-link">
+                      <img
+                        src={{ asset("front/assets/images/img_2_sq.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </a>
+                    <span class="date">Apr. 14th, 2022</span>
+                    <h2>
+                      <a href="single.html"
+                        >Startup vs corporate: What job suits you best?</a
+                      >
+                    </h2>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Unde, nobis ea quis inventore vel voluptas.
+                    </p>
+                    <p>
+                      <a href="single.html" class="btn btn-sm btn-outline-primary"
+                        >Read More</a
+                      >
+                    </p>
+                  </div>
                 </div>
-
               </div>
-              
             </div>
-
-            {{-- sidebar --}}
-            @include('front.layout.sidebar')            
+            <div class="col-md-3">
+              <ul class="list-unstyled blog-entry-sm">
+                <li>
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h3>
+                    <a href="single.html"
+                      >Don’t assume your user data in the cloud is safe</a
+                    >
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                    nobis ea quis inventore vel voluptas.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </li>
+  
+                <li>
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h3>
+                    <a href="single.html">Meta unveils fees on metaverse sales</a>
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                    nobis ea quis inventore vel voluptas.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </li>
+  
+                <li>
+                  <span class="date">Apr. 14th, 2022</span>
+                  <h3>
+                    <a href="single.html"
+                      >UK sees highest inflation in 30 years</a
+                    >
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                    nobis ea quis inventore vel voluptas.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-      <!-- End Culture Category Section -->
+      <!-- End posts-entry -->
+  
+      <section class="section bg-light">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-sm-6">
+              <h2 class="posts-entry-title">Artikel</h2>
+            </div>
+            <div class="col-sm-6 text-sm-end">
+              <a href="category.html" class="read-more">View All</a>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-4 mb-4">
+              <div class="post-entry-alt">
+                <a href="single.html" class="img-link"
+                  ><img
+                    src={{ asset("front/assets/images/img_7_horizontal.jpg") }}
+                    alt="Image"
+                    class="img-fluid"
+                /></a>
+                <div class="excerpt">
+                  <h2>
+                    <a href="single.html"
+                      >Startup vs corporate: What job suits you best?</a
+                    >
+                  </h2>
+                  <div class="post-meta align-items-center text-left clearfix">
+                    <figure class="author-figure mb-0 me-3 float-start">
+                      <img
+                        src={{ asset("front/assets/images/person_1.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </figure>
+                    <span class="d-inline-block mt-1"
+                      >By <a href="#">David Anderson</a></span
+                    >
+                    <span>&nbsp;-&nbsp; July 19, 2019</span>
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+                    sunt tempora dolor laudantium sed optio, explicabo ad deleniti
+                    impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
+                    quia porro id est.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+              <div class="post-entry-alt">
+                <a href="single.html" class="img-link"
+                  ><img
+                    src={{ asset("front/assets/images/img_6_horizontal.jpg") }}
+                    alt="Image"
+                    class="img-fluid"
+                /></a>
+                <div class="excerpt">
+                  <h2>
+                    <a href="single.html"
+                      >Startup vs corporate: What job suits you best?</a
+                    >
+                  </h2>
+                  <div class="post-meta align-items-center text-left clearfix">
+                    <figure class="author-figure mb-0 me-3 float-start">
+                      <img
+                        src={{ asset("front/assets/images/person_2.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </figure>
+                    <span class="d-inline-block mt-1"
+                      >By <a href="#">David Anderson</a></span
+                    >
+                    <span>&nbsp;-&nbsp; July 19, 2019</span>
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+                    sunt tempora dolor laudantium sed optio, explicabo ad deleniti
+                    impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
+                    quia porro id est.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+              <div class="post-entry-alt">
+                <a href="single.html" class="img-link"
+                  ><img
+                    src={{ asset("front/assets/images/img_5_horizontal.jpg") }}
+                    alt="Image"
+                    class="img-fluid"
+                /></a>
+                <div class="excerpt">
+                  <h2>
+                    <a href="single.html"
+                      >Startup vs corporate: What job suits you best?</a
+                    >
+                  </h2>
+                  <div class="post-meta align-items-center text-left clearfix">
+                    <figure class="author-figure mb-0 me-3 float-start">
+                      <img
+                        src={{ asset("front/assets/images/person_3.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </figure>
+                    <span class="d-inline-block mt-1"
+                      >By <a href="#">David Anderson</a></span
+                    >
+                    <span>&nbsp;-&nbsp; July 19, 2019</span>
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+                    sunt tempora dolor laudantium sed optio, explicabo ad deleniti
+                    impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
+                    quia porro id est.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 mb-4">
+              <div class="post-entry-alt">
+                <a href="single.html" class="img-link"
+                  ><img
+                    src={{ asset("front/assets/images/img_4_horizontal.jpg") }}
+                    alt="Image"
+                    class="img-fluid"
+                /></a>
+                <div class="excerpt">
+                  <h2>
+                    <a href="single.html"
+                      >Startup vs corporate: What job suits you best?</a
+                    >
+                  </h2>
+                  <div class="post-meta align-items-center text-left clearfix">
+                    <figure class="author-figure mb-0 me-3 float-start">
+                      <img
+                        src={{ asset("front/assets/images/person_4.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </figure>
+                    <span class="d-inline-block mt-1"
+                      >By <a href="#">David Anderson</a></span
+                    >
+                    <span>&nbsp;-&nbsp; July 19, 2019</span>
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+                    sunt tempora dolor laudantium sed optio, explicabo ad deleniti
+                    impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
+                    quia porro id est.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+              <div class="post-entry-alt">
+                <a href="single.html" class="img-link"
+                  ><img
+                    src={{ asset("front/assets/images/img_3_horizontal.jpg") }}
+                    alt="Image"
+                    class="img-fluid"
+                /></a>
+                <div class="excerpt">
+                  <h2>
+                    <a href="single.html"
+                      >Startup vs corporate: What job suits you best?</a
+                    >
+                  </h2>
+                  <div class="post-meta align-items-center text-left clearfix">
+                    <figure class="author-figure mb-0 me-3 float-start">
+                      <img
+                        src={{ asset("front/assets/images/person_5.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </figure>
+                    <span class="d-inline-block mt-1"
+                      >By <a href="#">David Anderson</a></span
+                    >
+                    <span>&nbsp;-&nbsp; July 19, 2019</span>
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+                    sunt tempora dolor laudantium sed optio, explicabo ad deleniti
+                    impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
+                    quia porro id est.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+              <div class="post-entry-alt">
+                <a href="single.html" class="img-link"
+                  ><img
+                    src={{ asset("front/assets/images/img_2_horizontal.jpg") }}
+                    alt="Image"
+                    class="img-fluid"
+                /></a>
+                <div class="excerpt">
+                  <h2>
+                    <a href="single.html"
+                      >Startup vs corporate: What job suits you best?</a
+                    >
+                  </h2>
+                  <div class="post-meta align-items-center text-left clearfix">
+                    <figure class="author-figure mb-0 me-3 float-start">
+                      <img
+                        src={{ asset("front/assets/images/person_4.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </figure>
+                    <span class="d-inline-block mt-1"
+                      >By <a href="#">David Anderson</a></span
+                    >
+                    <span>&nbsp;-&nbsp; July 19, 2019</span>
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+                    sunt tempora dolor laudantium sed optio, explicabo ad deleniti
+                    impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
+                    quia porro id est.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 mb-4">
+              <div class="post-entry-alt">
+                <a href="single.html" class="img-link"
+                  ><img
+                    src={{ asset("front/assets/images/img_1_horizontal.jpg") }}
+                    alt="Image"
+                    class="img-fluid"
+                /></a>
+                <div class="excerpt">
+                  <h2>
+                    <a href="single.html"
+                      >Startup vs corporate: What job suits you best?</a
+                    >
+                  </h2>
+                  <div class="post-meta align-items-center text-left clearfix">
+                    <figure class="author-figure mb-0 me-3 float-start">
+                      <img
+                        src={{ asset("front/assets/images/person_3.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </figure>
+                    <span class="d-inline-block mt-1"
+                      >By <a href="#">David Anderson</a></span
+                    >
+                    <span>&nbsp;-&nbsp; July 19, 2019</span>
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+                    sunt tempora dolor laudantium sed optio, explicabo ad deleniti
+                    impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
+                    quia porro id est.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+              <div class="post-entry-alt">
+                <a href="single.html" class="img-link"
+                  ><img
+                    src={{ asset("front/assets/images/img_4_horizontal.jpg") }}
+                    alt="Image"
+                    class="img-fluid"
+                /></a>
+                <div class="excerpt">
+                  <h2>
+                    <a href="single.html"
+                      >Startup vs corporate: What job suits you best?</a
+                    >
+                  </h2>
+                  <div class="post-meta align-items-center text-left clearfix">
+                    <figure class="author-figure mb-0 me-3 float-start">
+                      <img
+                        src="images/person_2.jpg"
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </figure>
+                    <span class="d-inline-block mt-1"
+                      >By <a href="#">David Anderson</a></span
+                    >
+                    <span>&nbsp;-&nbsp; July 19, 2019</span>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+                    sunt tempora dolor laudantium sed optio, explicabo ad deleniti
+                    impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
+                    quia porro id est.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+              <div class="post-entry-alt">
+                <a href="single.html" class="img-link"
+                  ><img
+                    src={{ asset("front/assets/images/img_3_horizontal.jpg") }}
+                    alt="Image"
+                    class="img-fluid"
+                /></a>
+                <div class="excerpt">
+                  <h2>
+                    <a href="single.html"
+                      >Startup vs corporate: What job suits you best?</a
+                    >
+                  </h2>
+                  <div class="post-meta align-items-center text-left clearfix">
+                    <figure class="author-figure mb-0 me-3 float-start">
+                      <img
+                        src={{ asset("front/assets/images/person_5.jpg") }}
+                        alt="Image"
+                        class="img-fluid"
+                      />
+                    </figure>
+                    <span class="d-inline-block mt-1"
+                      >By <a href="#">David Anderson</a></span
+                    >
+                    <span>&nbsp;-&nbsp; July 19, 2019</span>
+                  </div>
+  
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+                    sunt tempora dolor laudantium sed optio, explicabo ad deleniti
+                    impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
+                    quia porro id est.
+                  </p>
+                  <p><a href="#" class="read-more">Continue Reading</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 @endsection
-
