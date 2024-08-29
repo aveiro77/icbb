@@ -38,7 +38,7 @@
         <!-- /.col-lg-4 -->
         <div class="col-lg-4 ps-lg-5">
           <div class="widget">
-            <h3 class="mb-4">Company</h3>
+            <h3 class="mb-4">Links</h3>
             <ul class="list-unstyled float-start links">
               <li><a href="#">About us</a></li>
               <li><a href="#">Services</a></li>
@@ -64,60 +64,23 @@
             <h3 class="mb-4">Recent Post Entry</h3>
             <div class="post-entry-footer">
               <ul>
-                <li>
-                  <a href="">
-                    <img
-                      src={{ asset("front/assets/images/img_1_sq.jpg") }}
-                      alt="Image placeholder"
-                      class="me-4 rounded"
-                    />
-                    <div class="text">
-                      <h4>
-                        There’s a Cool New Way for Men to Wear Socks and
-                        Sandals
-                      </h4>
-                      <div class="post-meta">
-                        <span class="mr-2">March 15, 2018 </span>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img
-                      src={{ asset("front/assets/images/img_2_sq.jpg") }}
-                      alt="Image placeholder"
-                      class="me-4 rounded"
-                    />
-                    <div class="text">
-                      <h4>
-                        There’s a Cool New Way for Men to Wear Socks and
-                        Sandals
-                      </h4>
-                      <div class="post-meta">
-                        <span class="mr-2">March 15, 2018 </span>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <img
-                      src={{ asset("front/assets/images/img_3_sq.jpg") }}
-                      alt="Image placeholder"
-                      class="me-4 rounded"
-                    />
-                    <div class="text">
-                      <h4>
-                        There’s a Cool New Way for Men to Wear Socks and
-                        Sandals
-                      </h4>
-                      <div class="post-meta">
-                        <span class="mr-2">March 15, 2018 </span>
-                      </div>
-                    </div>
-                  </a>
-                </li>
+                @foreach($latest_posts as $latest)
+                  @if ($loop->index <= 2)
+                    <li>
+                      <a href="">
+                        <img src={{ asset('storage/back/' . $latest->img) }} alt={{ $latest->img_caption }} class="me-4 rounded"/>
+                        <div class="text">
+                          <h4>
+                            {{ $latest->title }}
+                          </h4>
+                          <div class="post-meta">
+                            <span class="mr-2">{{ \Carbon\Carbon::parse($latest->date)->translatedFormat('d M Y') }}</span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                  @endif
+                @endforeach
               </ul>
             </div>
           </div>
@@ -141,8 +104,7 @@
             <script>
               document.write(new Date().getFullYear());
             </script>
-            . All Rights Reserved. &mdash; Designed with love by
-            <a href="https://untree.co">Untree.co</a>
+            ICBB 28 Majalengka. All Rights Reserved.
             <!-- License information: https://untree.co/license/ -->
           </p>
         </div>

@@ -91,9 +91,15 @@
                 </div>
 
                 <div class="my-3">
-                <label for="desc" class="form-label">Description</label>
-                <textarea class="form-control" id="desc" name="desc" rows="10"></textarea>
+                    <label for="desc" class="form-label">Description</label>
+                    <textarea class="form-control" id="desc" name="desc" rows="10"></textarea>
                 </div>
+
+                <div class="mb-3">
+                    <label for="tags" class="form-label">Tags</label>
+                    <input type="text" class="form-control" name="tags" id="tags" placeholder="tech, business, work">
+                </div>
+
             </form>
         </div>
     </div>

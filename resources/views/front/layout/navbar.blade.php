@@ -13,24 +13,22 @@
         <div class="site-navigation">
           <div class="row g-0 align-items-center">
             <div class="col-2">
-              {{-- <a href="index.html" class="logo m-0 float-start">Ponpes Anharul ulum ICBB<span class="text-primary">.</span></a> --}}
+              <!-- {{-- <a href="index.html" class="logo m-0 float-start">Ponpes Anharul ulum ICBB<span class="text-primary">.</span></a> --}} -->
               <a class="navbar-brand" href="#">
                 <img src="https://placeholder.pics/svg/150x50/888888/EEE/Logo" alt="..." height="36">
               </a>
             </div>
             <div class="col-8 text-center">
-              <form action="#" class="search-form d-inline-block d-lg-none">
+              <!-- <form action="#" class="search-form d-inline-block d-lg-none">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Search..."
                 />
                 <span class="bi-search"></span>
-              </form>
+              </form> -->
 
-              <ul
-                class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto"
-              >
+              <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
                 <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="#">Berita</a></li>
                 <li><a href="#">Artikel</a></li>

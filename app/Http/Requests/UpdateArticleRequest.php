@@ -28,6 +28,7 @@ class UpdateArticleRequest extends FormRequest
             'desc' => 'required',
             'img' => 'nullable|image|file|mimes:png,jpg,jpeg,webp|max:2024',
             'img_caption' => 'required',
+            'tags' => 'nullable',
             'status' => 'required'
         ];
     }

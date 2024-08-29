@@ -53,6 +53,7 @@
               <th>#</th>
               <th>Title</th>
               <th>Category</th>
+              <th>Tags</th>
               <th>Status</th>
               <th>Published On</th>
               <th class="text-center">Function</th>
@@ -64,6 +65,11 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $article->title }}</td>
                     <td>{{ $article->category->name }}</td>
+                    <td>
+                    @foreach($article->tags as $tag)
+                        <span class="btn btn-outline-primary btn-sm rounded-4 py-1">{{ $tag->name }}</span>
+                    @endforeach
+                    </td>
                     <td>{{ $article->status }}</td>
                     <td>{{ $article->published }}</td>
                     <td>

@@ -10,15 +10,15 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $articles = Article::with('category')->where('status','1')->latest()->take(10)->get();
-        $latest_posts = $articles->where('status','1')->take(3);
-        $next_posts = $articles->where('status','1')->slice(3, 2);
-        $side_list_posts = $articles->where('status','1')->slice(5, 3);
+        $all = Article::with('category')->where('status','1')->latest()->get();
+        $latest_posts = $all->where('status','1')->take(5);
+        $news = $all->where('category_id',1)->take(5); // berita & kegiatan
+        $articles = $all->where('category_id',2)->take(9); // artikel
 
         return view('front.home.index', [
             'latest_posts' => $latest_posts,
-            'next_posts' => $next_posts,
-            'side_list_posts' => $side_list_posts,
+            'news' => $news,
+            'articles' => $articles,
             'categories' => Category::all()
         ]);
     }

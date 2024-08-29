@@ -5,7 +5,7 @@
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,7 +37,7 @@
 
     <link rel="stylesheet" href={{ asset("front/assets/css/flatpickr.min.css") }} />
 
-    <title>Blogy &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
+    <title>@yield('title')</title>
   </head>
   <body>
     <!-- ======= Header ======= -->

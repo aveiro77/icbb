@@ -28,7 +28,8 @@ class ArticleRequest extends FormRequest
             'desc' => 'required',
             'img' => 'required|image|file|mimes:png,jpg,jpeg,webp|max:2024',
             'img_caption' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            'tags' => 'nullable'
             // 'published' => 'required'
         ];
     }

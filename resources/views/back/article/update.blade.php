@@ -1,4 +1,7 @@
 @extends('back.layout.template')
+@push('css')
+<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
+@endpush
 
 @section('title', 'Create Articles - Admin')
 
@@ -98,9 +101,15 @@
                 </div>
 
                 <div class="my-3">
-                <label for="desc" class="form-label">Description</label>
-                <textarea class="form-control" id="desc" name="desc" rows="10">{{ old('desc', $article->desc) }}</textarea>
+                  <label for="desc" class="form-label">Description</label>
+                  <textarea class="form-control" id="desc" name="desc" rows="10">{{ old('desc', $article->desc) }}</textarea>
                 </div>
+
+                <div class="mb-3">
+                    <label for="tags" class="form-label">Tags</label>
+                    <input type="text" class="form-control" name="tags" id="tags" value="{{ old('tags', $article->tags->pluck('name')->implode(', ')) }}">
+                </div>
+
             </form>
         </div>
     </div>
@@ -114,4 +123,36 @@
             document.querySelector('#myForm').submit();
         });
     </script>
+    <script type="importmap">
+      {
+          "imports": {
+              "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.js",
+              "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.1/"
+          }
+      }
+  </script>
+
+  <script type="module">
+    import {
+        ClassicEditor,
+        Essentials,
+        Bold,
+        Italic,
+        Font,
+        Paragraph
+    } from 'ckeditor5';
+
+    ClassicEditor
+        .create( document.querySelector( '#desc' ), {
+            plugins: [ Essentials, Bold, Italic, Font, Paragraph ],
+            toolbar: {
+                items: [
+                    'undo', 'redo', '|', 'bold', 'italic', '|',
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor' 
+                ]
+            }
+        } )
+        .then( /* ... */ )
+        .catch( /* ... */ );
+  </script>
 @endpush
